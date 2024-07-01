@@ -102,7 +102,7 @@ style::after {content:'<\/style>'}
 
 <style>
 *::before,*::after {
-  color:rgba(136, 18, 128, 0.5);
+  color:rgba(255, 223, 255, 0.5);
   font-weight:100;
   font-size:1.0em
 }
@@ -113,8 +113,22 @@ html {
   max-width:70ch;
   padding:2ch;
   margin:auto;
-  color:#333;
+  color:white;
+  background-color:black;
   font-size:1.2em;
+}
+</style>
+
+<h2>Link Styling</h2>
+<style>
+a {
+  color: #00ffff; /* Cyan color for links */
+}
+a:hover {
+  color: #ff00ff; /* Magenta color when hovering over links */
+}
+a:visited {
+  color: #ffff00; /* Yellow color for visited links */
 }
 </style>
 
