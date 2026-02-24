@@ -1,140 +1,189 @@
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="0xEdgar personal website">
+  <meta name="color-scheme" content="light dark">
+  <title>0xEdgar</title>
+  <script>
+    (function () {
+      var hour = new Date().getHours();
+      var isDaytime = hour >= 7 && hour < 19;
+      document.documentElement.setAttribute("data-theme", isDaytime ? "light" : "dark");
+    })();
+  </script>
+  <style>
+    :root {
+      --bg: #f6f5f2;
+      --text: #16181d;
+      --muted: #5c626f;
+      --line: #d4d8e0;
+      --link: #234e84;
+      --accent: #1f2f42;
+    }
 
-<title> 0xEdgar </title>
+    html[data-theme="dark"] {
+      --bg: #0f1217;
+      --text: #e9edf4;
+      --muted: #a5adbb;
+      --line: #303845;
+      --link: #90c0ff;
+      --accent: #d9e4f5;
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: Charter, "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Palatino, serif;
+      color: var(--text);
+      line-height: 1.65;
+      background:
+        radial-gradient(1200px 500px at 20% -5%, rgba(75, 104, 137, 0.18), transparent 60%),
+        radial-gradient(1000px 600px at 110% -10%, rgba(142, 159, 180, 0.16), transparent 55%),
+        var(--bg);
+    }
+
+    .site {
+      max-width: 760px;
+      margin: 4rem auto;
+      padding: 0 1.25rem 3rem;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      margin-bottom: 2.5rem;
+      padding-bottom: 0.9rem;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 2.4rem);
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: var(--accent);
+    }
+
+    .subtitle {
+      margin: 0.35rem 0 0;
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    nav {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.75rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    nav a {
+      color: var(--muted);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    nav a:hover,
+    nav a:focus-visible {
+      color: var(--text);
+      border-bottom-color: var(--text);
+    }
+
+    section {
+      margin-bottom: 2.25rem;
+    }
+
+    h2 {
+      margin: 0 0 0.65rem;
+      font-size: 1.08rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    p {
+      margin: 0.5rem 0;
+    }
+
+    ul {
+      margin: 0.5rem 0 0 1.2rem;
+      padding: 0;
+    }
+
+    li {
+      margin: 0.25rem 0;
+    }
+
+    a {
+      color: var(--link);
+      text-decoration-thickness: 0.08em;
+      text-underline-offset: 0.16em;
+    }
+
+    a:hover,
+    a:focus-visible {
+      color: var(--text);
+    }
+
+    .coming-soon {
+      color: var(--muted);
+      font-style: italic;
+    }
+
+  </style>
 </head>
-
 <body>
+  <div class="site">
+    <header>
+      <h1>0xEdgar</h1>
+      <p class="subtitle">Software Engineer at Jito Labs</p>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#investments">Investments</a>
+        <a href="#blog">Blog</a>
+      </nav>
+    </header>
 
-<h1> About </h1>
+    <main>
+      <section id="about">
+        <h2>About</h2>
+        <p>I'm currently a software engineer at <a href="https://www.jito.wtf/">Jito Labs</a>, working on MEV.</p>
+        <p>Crypto Class of 2021.</p>
+        <p>CMU class of 2019.</p>
+        <p>Selected writing and research:</p>
+        <ul>
+          <li><a href="https://www.umbraresearch.xyz/writings/mev-on-solana">MEV on Solana</a></li>
+          <li><a href="https://github.com/erasaur/sc2-rl/">Solving Starcraft Minigames with Asynchronous Actor Critics (Code)</a></li>
+          <li><a href="https://arxiv.org/abs/1712.03480">Capsule Networks on Complex Data (Paper)</a></li>
+          <li><a href="https://arxiv.org/abs/1710.02595">Intelligent Pothole Detection (Paper)</a></li>
+        </ul>
+      </section>
 
+      <section id="investments">
+        <h2>Investments</h2>
+        <ul>
+          <li>Ellipsis Labs</li>
+          <li>Monad Labs</li>
+          <li>DoubleZero</li>
+          <li>[Redacted]</li>
+          <li>[Redacted]</li>
+        </ul>
+      </section>
 
-<p> I'm currently a software engineer at <a href='https://www.jito.wtf/'>Jito Labs</a>, working on MEV. </p>
+      <section id="blog">
+        <h2>Blog</h2>
+        <p class="coming-soon">Coming soon.</p>
+      </section>
+    </main>
 
-<p> Crypto Class of 2021 </p>
-
-<p> CMU class of 2019 </p>
-
-
-<h2> Investing </h2>
-
-<p> Ellipsis Labs </p>
-
-<p> Monad Labs  </p>
-
-<p> DoubleZero </p>
-
-<p> [Redacted] </p>
-
-<p> [Redacted] </p>
-
-
-<h2> Research </h2>
-
-
-<p> MEV on Solana: <a href='https://www.umbraresearch.xyz/writings/mev-on-solana'> (Link) </a></p>
-<p> Solving Starcraft Minigames with Asynchronous Actor Critics <a href='https://github.com/erasaur/sc2-rl/'>(Code)</a></p>
-<p> Capsule Networks on Complex Data: <a href='https://arxiv.org/abs/1712.03480'>(Paper) </a></p>
-<p> Intelligent Pothole Detection: <a href='https://arxiv.org/abs/1710.02595'>(Paper) </a></p>
-
-<h2> This Website is a Quine </h2> 
-<a href='https://en.wikipedia.org/wiki/Quine_(computing)'></a>
-
-
-<h1> Styling </h1>
-
-<style>* { display:block; }</style>
-
-
-<style>a,code,em,strong {display:inline}</style>
-
-
-<style>*{ font-family:Monospace; margin:1.5em 0; padding:0; text-decoration:none}</style>
-
-
-<style>
-style, blockquote {
-  white-space: pre-wrap;
-}
-</style>
-
-
-
-<style>
-html::before {content:'<html>'}
-html::after {content:'</html>'}
-head::before {content:'<head>'}
-head::after {content:'</head>'}
-title::before {content:'<title>'}
-title::after {content:'</title>'}
-body::before {content:'<body>'}
-body::after {content:'</body>'}
-h1::before {content:'<h1>'}
-h1::after {content:'</h1>'}
-h2::before {content:'<h2>'}
-h2::after {content:'</h2>'}
-p::before {content:'<p>'}
-p::after {content:'</p>'}
-pre::before {content:'<pre>'}
-pre::after {content:'</pre>'}
-code::before {content:'<code>'}
-code::after {content:'</code>'}
-a::before {content:'<a>'}
-a::after {content:'</a>'}
-aside::before {content:'<aside>'}
-aside::after {content:'</aside>'}
-blockquote::before {content:'<blockquote>'}
-blockquote::after {content:'</blockquote>'}
-em::before {content:'<em>'}
-em::after {content:'</em>'}
-strong::before {content:'<strong>'}
-strong::after {content:'</strong>'}
-</style>
-
-
-<style>a[href]::before {content: "<a href='" attr(href) "'>"}</style>
-
-
-<style>
-style::before {content:'<style>'}
-style::after {content:'<\/style>'}
-</style>
-
-
-<style>
-*::before,*::after {
-  color: #D3D3D3;
-  font-weight:100;
-  font-size:1.0em
-}
-</style>
-
-<style>
-html {
-  max-width:70ch;
-  padding:2ch;
-  margin:auto;
-  color:white;
-  background-color:black;
-  font-size:1.2em;
-}
-</style>
-
-/* Link Styling */
-<style>
-a {
-  color: #00ffff; /* Cyan color for links */
-}
-a:hover {
-  color: #ff00ff; /* Magenta color when hovering over links */
-}
-a:visited {
-  color: #ffff00; /* Yellow color for visited links */
-}
-</style>
-
+  </div>
 </body>
 </html>
-
